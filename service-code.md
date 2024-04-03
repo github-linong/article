@@ -72,6 +72,9 @@ nvm install 18
 nvm use 18
 
 npm install -g pm2 yarn pnpm
+
+# code-server
+curl -fsSL https://code-server.dev/install.sh | sh
 ```
 
 #### mongodb
