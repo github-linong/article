@@ -43,7 +43,7 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 # sudo certbot --nginx
 # sudo certbot renew --dry-run
 # certbot --nginx --email lilnong1@126.com -d jgq-static.lilnong.top -d jgq-server.lilnong.top
-
+# sudo certbot --non-interactive --redirect --agree-tos --nginx -d mydomain.com -m me@example.com
 
 ```
 
@@ -78,6 +78,30 @@ curl -fsSL https://code-server.dev/install.sh | sh
 # sudo systemctl enable --now code-server@$USER
 # code-server
 
+
+```
+
+```
+nginx -t
+vim /etc/nginx/nginx.conf
+
+```
+
+```nginx
+# vim /etc/nginx/sites-enabled/default
+server {
+    listen 80;
+    listen [::]:80;
+    server_name vscode.ali_60_205_9_135.lilnong.top;
+    location / {
+            proxy_pass http://localhost:8080;
+            proxy_set_header Host $http_host;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection upgrade;
+            proxy_set_header Accept-Encoding gzip;
+    }
+}
+  
 ```
 
 #### mongodb
