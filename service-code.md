@@ -43,7 +43,9 @@ sudo ln -s /snap/bin/certbot /usr/bin/certbot
 # sudo certbot --nginx
 # sudo certbot renew --dry-run
 # certbot --nginx --email lilnong1@126.com -d jgq-static.lilnong.top -d jgq-server.lilnong.top
-# sudo certbot --non-interactive --redirect --agree-tos --nginx -d mydomain.com -m me@example.com
+# sudo certbot --non-interactive --redirect --agree-tos --nginx -d vscode.ali_60_205_9_135.lilnong.top -m lilnong1@126.com
+# sudo certbot --non-interactive --redirect --agree-tos --nginx -d vscode_ali_60_205_9_135.lilnong.top -m lilnong1@126.com
+# sudo certbot --non-interactive --redirect --agree-tos --nginx -d vscode.ali.60.205.9.135.lilnong.top -m lilnong1@126.com
 
 ```
 
@@ -77,14 +79,11 @@ npm install -g pm2 yarn pnpm
 curl -fsSL https://code-server.dev/install.sh | sh
 # sudo systemctl enable --now code-server@$USER
 # code-server
-
-
 ```
 
 ```
 nginx -t
 vim /etc/nginx/nginx.conf
-
 ```
 
 ```nginx
@@ -101,7 +100,6 @@ server {
             proxy_set_header Accept-Encoding gzip;
     }
 }
-  
 ```
 
 #### mongodb
