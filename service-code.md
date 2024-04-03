@@ -26,3 +26,57 @@
 
 
 ### 安装命令
+#### [snapd](https://snapcraft.io/docs/installing-snapd)
+```shell
+sudo apt update
+sudo apt install snapd
+
+sudo snap install hello-world
+hello-world
+```
+
+#### [certbot](https://certbot.eff.org/instructions?ws=nginx&os=arch)
+```shell
+sudo apt-get remove certbot
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+# sudo certbot --nginx
+# sudo certbot renew --dry-run
+# certbot --nginx --email lilnong1@126.com -d jgq-static.lilnong.top -d jgq-server.lilnong.top
+
+
+```
+
+
+#### [nvm](https://github.com/nvm-sh/nvm) 
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# OR
+# wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+#### [nginx](https://github.com/nginx/nginx) | [docs](https://nginx.org/en/docs/install.html)
+```shell
+# install the prerequisties
+sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
+sudo apt update
+sudo apt install nginx
+```
+
+#### Node
+```shell
+nvm install 18
+nvm use 18
+
+npm install -g pm2 yarn pnpm
+```
+
+#### mongodb
+#### radis
+#### mariadb
+
+## 其他
+1. [SF笔记](https://segmentfault.com/n/1330000023372599)
